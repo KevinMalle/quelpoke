@@ -32,7 +32,7 @@ func env(name string, def string) string {
 }
 
 func main() {
-	addr := env("ADDR", "127.0.0.1")
+	addr := env("ADDR", "0.0.0.0")
 	port := env("PORT", "8080")
 	listen := fmt.Sprintf("%s:%s", addr, port)
 
