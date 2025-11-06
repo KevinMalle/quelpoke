@@ -1,27 +1,26 @@
-name: "CI/CD quelpoke" 
+name: "CI/CD quelpoke"
 
 on:
-  push: 
+  push:
     branches:
-    - main
+      - main
 
 env:
   KUBERNETES_CLUSTER: gke-maalsi24-infal127
   IMAGE_TAG: europe-west9-docker.pkg.dev/cs-poc-hpzdycpiqjyvinhrczvlwcn/student-kevinm/quelpoke:1.0.0
   PROJECT_ID: cs-poc-hpzdycpiqjyvinhrczvlwcn
 
-jobs: 
+jobs:
   ci-cd-build-push-deploy:
     runs-on: ubuntu-latest
 
     steps:
-
       - uses: actions/checkout@v4
 
       - name: "Authenticate to Google Cloud"
-        uses: 'google-github-actions/auth@v2'
+        uses: "google-github-actions/auth@v2"
         with:
-          credentials_json: '${{ secrets.SERVICE_ACCOUNT_KEY }}'
+          credentials_json: "${{ secrets.SERVICE_ACCOUNT_KEY }}"
 
       - name: "Authenticate to Google Cloud Artifacts Registry"
         run: gcloud --quiet auth configure-docker europe-west9-docker.pkg.dev
@@ -41,4 +40,3 @@ jobs:
 
       - name: "Deploy to kubernetes"
         run: kubectl apply -f kubernetes/deploy.yaml
-        
