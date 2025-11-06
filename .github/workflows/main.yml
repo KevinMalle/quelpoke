@@ -32,6 +32,10 @@ jobs:
       - name: "Push docker image"
         run: docker push ${IMAGE_TAG}
 
+      - uses: google-github-actions/setup-gcloud@v2
+        with:
+          install_components: gke-gcloud-auth-plugin
+
       - name: "Authenticate to Google Cloud Kubernetes Engine"
         run: gcloud container clusters get-credentials ${KUBERNETES_CLUSTER} --region europe-west9 --project ${PROJECT_ID}
 
