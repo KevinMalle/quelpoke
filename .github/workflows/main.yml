@@ -36,5 +36,5 @@ jobs:
         run: gcloud container clusters get-credentials ${KUBERNETES_CLUSTER} --region europe-west9 --project ${PROJECT_ID}
 
       - name: "Deploy to kubernetes"
-        run: kubectl apply -f kubernetes/quelpoke.yaml
+        run: kubectl apply -f kubernetes/deploy.yaml
         
