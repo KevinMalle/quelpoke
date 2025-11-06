@@ -7,7 +7,7 @@ on:
 
 env:
   KUBERNETES_CLUSTER: gke-maalsi24-infal127
-  IMAGE_TAG: europe-west9-docker.pkg.dev/cs-poc-hpzdycpiqjyvinhrczvlwcn/student-kevinm/quelpoke:latest
+  IMAGE_TAG: europe-west9-docker.pkg.dev/cs-poc-hpzdycpiqjyvinhrczvlwcn/student-kevinm/quelpoke:1.0.0
   PROJECT_ID: cs-poc-hpzdycpiqjyvinhrczvlwcn
 
 jobs: 
