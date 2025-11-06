@@ -26,7 +26,7 @@ jobs:
         run: gcloud --quiet auth configure-docker europe-west9-docker.pkg.dev
 
       - name: "Build docker image"
-        run: docker build --tag=${IMAGE_TAG}
+        run: docker build --tag=${IMAGE_TAG} .
 
       - name: "Push docker image"
         run: docker push ${IMAGE_TAG}
