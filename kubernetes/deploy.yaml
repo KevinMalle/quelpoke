@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: quelpoke-kevinm
-          image: europe-west9-docker.pkg.dev/cs-poc-hpzdycpiqjyvinhrczvlwcn-2a588f0603e8/student-kevinm/quelpoke:1.0.0
+          image: europe-west9-docker.pkg.dev/cs-poc-hpzdycpiqjyvinhrczvlwcn/student-kevinm/quelpoke:1.0.0
           ports:
             - containerPort: 8080
           resources:
